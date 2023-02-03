@@ -1,4 +1,4 @@
-<div class="cookies-bar-container">
+<div *ngIf="!isLoading && !isConfigured" class="cookies-bar-container">
     <mat-card>
         <mat-card-header>
             <mat-card-title>We value your privacy</mat-card-title>
@@ -9,7 +9,7 @@
                 <div class="actions">
                     <button mat-stroked-button color="primary" (click)="isShowCustomizer = !isShowCustomizer">Customize <mat-icon *ngIf="isShowCustomizer">arrow_drop_down</mat-icon> <mat-icon *ngIf="!isShowCustomizer">arrow_drop_up</mat-icon></button>
                     <button mat-stroked-button color="primary">Reject All</button>
-                    <button mat-flat-button color="primary">Accept All</button>
+                    <button mat-flat-button color="primary" (click)="onClickAcceptAll()">Accept All</button>
                 </div>
             </div>
             

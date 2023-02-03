@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "@tots/cookies": {
+      "projectType": "library",
+      "root": "projects/tots/cookies",
+      "sourceRoot": "projects/tots/cookies/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/tots/cookies/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tots/cookies/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tots/cookies/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/tots/cookies/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "9cea6bf0-1e96-4823-bcad-3bc34a65e39e"
   }
 }

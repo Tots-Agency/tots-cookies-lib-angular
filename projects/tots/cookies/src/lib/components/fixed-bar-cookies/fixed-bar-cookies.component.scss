@@ -18,4 +18,25 @@
             margin-left: 0;
         }
     }
+
+    .customizer {
+        .items {
+            .item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid lightgray;
+
+                p, h2 {
+                    margin: 0;
+                }
+                .action {
+                    color: green;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    
 }

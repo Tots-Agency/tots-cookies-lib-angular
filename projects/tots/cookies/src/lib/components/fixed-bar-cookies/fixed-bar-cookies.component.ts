@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { tap } from 'rxjs';
 import { TotsCookiesService } from '../../services/tots-cookies.service';
 
@@ -13,12 +14,50 @@ export class FixedBarCookiesComponent implements OnInit {
   isLoading = true;
   isConfigured = false;
 
+  checkFunctional = false;
+  checkAnalytics = false;
+  checkAdvertising = false;
+
   constructor(
     protected cookiesService: TotsCookiesService
   ) { }
 
   ngOnInit(): void {
     this.loadCookies();
+  }
+
+  onClickSave() {
+    if(this.checkFunctional){
+      this.cookiesService.acceptFunctional();
+    } else {
+      this.cookiesService.rejectFunctional();
+    }
+    
+    if(this.checkAnalytics){
+      this.cookiesService.acceptAnalytics();
+    } else {
+      this.cookiesService.rejectAnalytics();
+    }
+
+    if(this.checkAdvertising){
+      this.cookiesService.acceptAdvertising();
+    } else {
+      this.cookiesService.rejectAdvertising();
+    }
+
+    this.isConfigured = true;
+  }
+
+  onChangeCheckFunctional(event: MatSlideToggleChange) {
+    this.checkFunctional = event.checked;
+  }
+
+  onChangeCheckAnalytics(event: MatSlideToggleChange) {
+    this.checkAnalytics = event.checked;
+  }
+
+  onChangeCheckAdvertising(event: MatSlideToggleChange) {
+    this.checkAdvertising = event.checked;
   }
 
   onClickAcceptAll() {

@@ -20,25 +20,45 @@
 
                 <div class="items">
                     <div class="item">
-                        <h2>Necessary</h2>
-                        <p>Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.</p>
+                        <div class="content">
+                            <h2>Necessary</h2>
+                            <p>Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.</p>
+                        </div>
+                        <div class="action">
+                            <span>Always Active</span>
+                        </div>
+                        
                     </div>
                     <div class="item">
-                        <h2>Functional</h2>
-                        <p>Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.</p>
-                        <mat-slide-toggle></mat-slide-toggle>
+                        <div class="content">
+                            <h2>Functional</h2>
+                            <p>Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.</p>
+                        </div>
+                        <div class="action">
+                            <mat-slide-toggle (change)="onChangeCheckFunctional($event)"></mat-slide-toggle>
+                        </div>
                     </div>
                     <div class="item">
-                        <h2>Analytics</h2>
-                        <p>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.</p>
-                        <mat-slide-toggle></mat-slide-toggle>
+                        <div class="content">
+                            <h2>Analytics</h2>
+                            <p>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.</p>
+                        </div>
+                        <div class="action">
+                            <mat-slide-toggle (change)="onChangeCheckAnalytics($event)"></mat-slide-toggle>
+                        </div>
                     </div>
                     <div class="item">
-                        <h2>Advertisement</h2>
-                        <p>Advertisement cookies are used to provide visitors with customized advertisements based on the pages you visited previously and to analyze the effectiveness of the ad campaigns.</p>
-                        <mat-slide-toggle></mat-slide-toggle>
+                        <div class="content">
+                            <h2>Advertisement</h2>
+                            <p>Advertisement cookies are used to provide visitors with customized advertisements based on the pages you visited previously and to analyze the effectiveness of the ad campaigns.</p>
+                        </div>
+                        <div class="action">
+                            <mat-slide-toggle (change)="onChangeCheckAdvertising($event)"></mat-slide-toggle>
+                        </div>
                     </div>
                 </div>
+
+                <button mat-flat-button color="primary" (click)="onClickSave()">Save my preferences</button>
             </div>
         </mat-card-content>
     </mat-card>  

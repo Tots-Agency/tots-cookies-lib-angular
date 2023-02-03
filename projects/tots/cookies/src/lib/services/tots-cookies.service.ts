@@ -57,4 +57,28 @@ export class TotsCookiesService {
   acceptAdvertising() {
     this.accept('advertising');
   }
+
+  rejectAll(){
+    this.rejectFunctional();
+    this.rejectAnalytics();
+    this.rejectAdvertising();
+  }
+
+  reject(key: string) {
+    this.storage.set(TotsCookiesService.STORAGE_KEY_COOKIE + key, false, { type: 'boolean' }).subscribe();
+    this.storage.set(TotsCookiesService.STORAGE_KEY_MAIN, true, { type: 'boolean' }).subscribe();
+  }
+
+  rejectFunctional() {
+    this.reject('functional');
+  }
+
+  rejectAnalytics() {
+    this.reject('analytics');
+  }
+
+  rejectAdvertising() {
+    this.reject('advertising');
+  }
+
 }

@@ -26,6 +26,11 @@ export class FixedBarCookiesComponent implements OnInit {
     this.isConfigured = true;
   }
 
+  onClickRejectAll() {
+    this.cookiesService.rejectAll();
+    this.isConfigured = true;
+  }
+
   loadCookies() {
     this.cookiesService.has()
     .pipe(tap(res => this.isConfigured = res))

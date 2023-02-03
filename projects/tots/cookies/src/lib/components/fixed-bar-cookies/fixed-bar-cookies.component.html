@@ -8,7 +8,7 @@
                 <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
                 <div class="actions">
                     <button mat-stroked-button color="primary" (click)="isShowCustomizer = !isShowCustomizer">Customize <mat-icon *ngIf="isShowCustomizer">arrow_drop_down</mat-icon> <mat-icon *ngIf="!isShowCustomizer">arrow_drop_up</mat-icon></button>
-                    <button mat-stroked-button color="primary">Reject All</button>
+                    <button mat-stroked-button color="primary" (click)="onClickRejectAll()">Reject All</button>
                     <button mat-flat-button color="primary" (click)="onClickAcceptAll()">Accept All</button>
                 </div>
             </div>

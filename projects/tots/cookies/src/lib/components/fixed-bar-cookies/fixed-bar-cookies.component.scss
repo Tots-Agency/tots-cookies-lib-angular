@@ -1,0 +1,21 @@
+.cookies-bar-container {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .cookies-main-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .actions {
+        button {
+            margin-left: 10px;
+        }
+        button:first-child {
+            margin-left: 0;
+        }
+    }
+}

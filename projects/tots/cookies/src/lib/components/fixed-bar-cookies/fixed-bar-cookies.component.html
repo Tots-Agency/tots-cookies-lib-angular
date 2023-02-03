@@ -4,14 +4,17 @@
             <mat-card-title>We value your privacy</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
-            <div class="actions">
-                <button>Customize</button>
-                <button>Reject All</button>
-                <button>Accept All</button>
+            <div class="cookies-main-container">
+                <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+                <div class="actions">
+                    <button mat-stroked-button color="primary" (click)="isShowCustomizer = !isShowCustomizer">Customize <mat-icon *ngIf="isShowCustomizer">arrow_drop_down</mat-icon> <mat-icon *ngIf="!isShowCustomizer">arrow_drop_up</mat-icon></button>
+                    <button mat-stroked-button color="primary">Reject All</button>
+                    <button mat-flat-button color="primary">Accept All</button>
+                </div>
             </div>
+            
 
-            <div class="customizer">
+            <div *ngIf="isShowCustomizer" class="customizer">
                 <h2>Customize Consent Preferences</h2>
                 <p>We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below. The cookies that are categorized as "Necessary" are stored on your browser as they are essential for enabling the basic functionalities of the site. We also use third-party cookies that help us analyze how you use this website, store your preferences, and provide the content and advertisements that are relevant to you. These cookies will only be stored in your browser with your prior consent. You can choose to enable or disable some or all of these cookies but disabling some of them may affect your browsing experience.</p>
 
